@@ -1,7 +1,6 @@
 package org.glycoinfo.rdf.service;
 
 import org.glycoinfo.rdf.SparqlException;
-import org.glycoinfo.rdf.dao.SesameDAOTestConfig;
 import org.glycoinfo.rdf.dao.SparqlDAO;
 import org.glycoinfo.rdf.scint.ClassHandler;
 import org.glycoinfo.rdf.scint.InsertScint;
@@ -17,7 +16,7 @@ import org.springframework.context.annotation.FilterType;
 
 
 //@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = {InitProcedureTest.class, SesameDAOTestConfig.class} )
+@SpringApplicationConfiguration(classes = {InitProcedureTest.class} )
 @ComponentScan(basePackages = {"org.glycoinfo.rdf.service", "org.glycoinfo.rdf.scint"}, excludeFilters={
 		  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=InitProcedureTest.class)})
 //@ComponentScan(basePackages = {"org.glycoinfo.rdf"}, excludeFilters={

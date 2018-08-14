@@ -1,0 +1,9 @@
+<html>
+    <body>
+        <h3>New Registration</h3>
+
+        <div>
+        ${se}
+        </div>
+    </body>
+</html>

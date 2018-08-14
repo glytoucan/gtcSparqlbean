@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <h3>Hello ${se}, Thank you for registering to GlyTouCan!</h3>
+
+        <div>
+        	As long as you have verified your email address, <a href="mailto:${emailAddress}">${emailAddress}</a>, with google,
+        	you can begin registering Glycan Structures.
+            Only your first name will be displayed for each glycan structure registered.  
+            Please contact us at <a href="mailto:support@glytoucan.org">support@glytoucan.org</a> if you have any comments or questions!
+            Our complete manual, architecture, blog and team information is available at <a href="http://code.glytoucan.org>http://code.glytoucan.org</a>
+        </div>
+    </body>
+</html>

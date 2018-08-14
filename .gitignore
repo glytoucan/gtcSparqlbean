@@ -1,0 +1,9 @@
+target*
+.settings
+.springBeans
+.classpath
+.project
+/bin
+logs*
+*.log*
+triplestore.prod.env

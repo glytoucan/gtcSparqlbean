@@ -1,0 +1,48 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:http="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="org.glycoinfo" />
+
+	<!-- 
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:application.yml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="tripleSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" p:driverClassName="${ts.driverClassName}"
+		p:url="${ts.databaseurl}" p:username="${ts.username}" p:password="${ts.password}"
+		p:removeAbandoned="true"></bean>
+	<bean id="schemaDAO" class="org.glycoinfo.ts.dao.SchemaDAOSesameImpl">
+		<property name="tripleSource" ref="tripleSource" />
+	</bean>
+		 -->
+
+	<tx:annotation-driven />
+
+	<bean id="glysearch" class="org.glycoinfo.search.kcam.KCAMSearch" />
+<!-- 
+	<bean id="glyConvert" class="org.glycoinfo.conversion.kcf.GlycoctToKcfConverter">
+		<property name="filepass"
+			value="/home/aoki/workspace/GlyConvert/src/main/resources/GlycoctToKcf2.pl" />
+	</bean>
+	 -->
+</beans>

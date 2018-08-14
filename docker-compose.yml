@@ -1,0 +1,10 @@
+version: '2'
+services:
+  batch:
+    image: maven:3.3.9-jdk-8
+    volumes:
+      - ${HOME}/glytoucan/maven:/root/.m2
+      - ${WORKSPACE_PARENT}/${WORKSPACE}:/workspace
+      - /etc/localtime:/etc/localtime
+    working_dir: /workspace/batch
+    command: mvn install

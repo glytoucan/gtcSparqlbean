@@ -65,7 +65,28 @@ public class GlycanProcedureConfig implements GraphConfig {
 	@Bean(name="glycoSequenceContributorSelectSparql")
 	SelectSparql glycoSequenceContributorSelectSparql() {
 		GlycoSequenceResourceEntryContributorSelectSparql sb = new GlycoSequenceResourceEntryContributorSelectSparql();
-		sb.setFrom("FROM <http://rdf.glytoucan.org/core>\nFROM <http://rdf.glytoucan.org/core>\nFROM <http://rdf.glytoucan.org/sequence/wurcs>\nFROM <http://rdf.glytoucan.org/mass>\nFROM <http://rdf.glytoucan.org/sequence/glycoct>\nFROM <http://rdf.glytoucan.org/users>\n");
+		sb.setFrom("FROM <http://rdf.glytoucan.org/core>\nFROM <http://rdf.glytoucan.org/core>\nFROM <http://rdf.glytoucan.org/sequence/wurcs>\nFROM <http://rdf.glytoucan.org/mass>\nFROM <http://rdf.glytoucan.org/sequence/glycoct>\nFROM <http://rdf.glytoucan.org/users>\n" +
+		"FROM <http://rdf.glytoucan.org/partner/jcggdb_aist>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/jcggdb_aist>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/csdb>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/esp_database>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/grits_toolbox>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/unicarb-db>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/unicarbkb>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/glycam-web>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/glyconavi-ref-pubchem-cid>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/institute_of_biomedicine._university_of_gothenburg>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/swiss_institute_of_bioinformatics>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/glyconavi>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/glycoepitope>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/glycome-db>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/ggdb_acgg_aist>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/jmsdb_jcggdb_aist>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/lfdb_acgg_aist>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/bcsdb>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/glycostore>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/glyconnect>\n"
+		+ "FROM <http://rdf.glytoucan.org/partner/glycochemexplorer_jcggdb_aist>\n");
 		return sb;
 	}
 	

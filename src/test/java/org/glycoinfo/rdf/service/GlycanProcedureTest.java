@@ -175,13 +175,13 @@ public class GlycanProcedureTest {
 		return resourceEntryInsertSparql;
 	}
 	
-	@Bean
-	@Scope("prototype")
-	SelectSparql glycoSequenceContributorSelectSparql() {
-		GlycoSequenceResourceEntryContributorSelectSparql sb = new GlycoSequenceResourceEntryContributorSelectSparql();
-		sb.setFrom("FROM <" + graph + ">\nFROM <http://rdf.glytoucan.org/sequence/wurcs>\nFROM <http://rdf.glytoucan.org/mass>");
-		return sb;
-	}
+//	@Bean
+//	@Scope("prototype")
+//	SelectSparql glycoSequenceContributorSelectSparql() {
+//		GlycoSequenceResourceEntryContributorSelectSparql sb = new GlycoSequenceResourceEntryContributorSelectSparql();
+//		sb.setFrom("FROM <" + graph + ">\nFROM <http://rdf.glytoucan.org/sequence/wurcs>\nFROM <http://rdf.glytoucan.org/mass>");
+//		return sb;
+//	}
 	
 	@Bean
 	WurcsRDFInsertSparql wurcsRDFInsertSparql() {

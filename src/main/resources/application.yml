@@ -1,6 +1,3 @@
-GlycoctToKcfConverter:
-    filepass:
-        "/home/aoki/workspace/GlyConvert/src/main/resources/GlycoctToKcf2.pl"
 spring:
     application:
         name: glycosearch
@@ -15,24 +12,3 @@ spring:
    #     password: db@
         password: dba
         graph: graph
-wurcs:
-  graph:
-    target: <http://rdf.glytoucan.org/sequence/wurcs>
-    ms: <http://rdf.glytoucan.org/wurcs/ms>
-   # target: <http://rdf.glycoinfo.org/wurcs/seq/0.3/glytoucan/20150902>
-   # ms: <http://rdf.glycoinfo.org/wurcs/ms/0.2>
-
-
-mail:
-  address:
-    from: support@glytoucan.org
-    admin: admin@glytoucan.org
-  subject:
-    newRegistration: Your registration to the Glycan Repository, GlyTouCan
-    notifyRegistration: NEW registration:>
-  body:
-    newRegistration: newRegistration.vm
-    notifyRegistration: notifyRegistration.vm
-
-msDb:
-  rdf: http://www.monosaccharidedb.org/rdf/monosaccharide.action?name=

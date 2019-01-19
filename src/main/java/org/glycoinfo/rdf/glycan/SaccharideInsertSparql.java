@@ -54,7 +54,6 @@ public class SaccharideInsertSparql extends InsertSparqlBean implements Sacchari
 		return "<" + getUri() + ">";
 	}
 
-	@Override
 	public String getUri() {
 		return SaccharideUtil.getURI(getSparqlEntity().getValue(PrimaryId)); 
 	}

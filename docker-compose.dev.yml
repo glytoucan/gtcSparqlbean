@@ -1,0 +1,17 @@
+version: '2'
+services:
+  maven:
+    extends:
+      file: docker-compose.yml
+      service: maven
+    volumes:
+      - .:/workspace
+      - ${MAVEN_DIR}:/root/.m2
+      - /etc/localtime:/etc/localtime
+    working_dir: /workspace
+    command: mvn -U -DskipTests=true package
+    environment:
+     - PROJECT_VERSION
+     - ARTIFACT_ID
+     - MAVEN_REPO_USER
+     - MAVEN_REPO_PASS

@@ -7,3 +7,4 @@ target*
 logs*
 *.log*
 triplestore.prod.env
+.m2

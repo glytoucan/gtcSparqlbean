@@ -17,9 +17,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,9 +31,8 @@ import org.springframework.transaction.annotation.Transactional;
  * To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = {ContributorInsertSparqlTest.class, VirtSesameTransactionConfig.class })
-@ComponentScan(basePackages = {"org.glytoucan.ws"})
+@SpringBootTest
+@Import({TestConfig.class })
 @EnableAutoConfiguration
 public class ContributorInsertSparqlTest {
 	private static final Log logger = LogFactory
@@ -40,29 +40,16 @@ public class ContributorInsertSparqlTest {
 
 	@Autowired
 	SparqlDAO sparqlDAO;
-
-	@Bean
-	SparqlDAO getSparqlDAO() {
-		return new SparqlDAOVirtSesameImpl();
-	}
 	
-	@Bean
-	InsertSparql getInsertSparql() {
-		ContributorInsertSparql ins = new ContributorInsertSparql();
-		SparqlEntity sparqlentity = new SparqlEntity();
-		sparqlentity.setValue(ContributorInsertSparql.UserId, "1234");
-		sparqlentity.setValue(ContributorInsertSparql.ContributorName, "testname");
-		ins.setSparqlEntity(sparqlentity);
-		ins.setGraph("http://test");
-		return ins;
-	}
+	@Autowired
+	InsertSparql insertSparql;
 
 	@Test
 	@Transactional
 	public void insertSparql() throws SparqlException {
-		sparqlDAO.insert(getInsertSparql());
+		sparqlDAO.insert(insertSparql);
 		
-		List<SparqlEntity> list = sparqlDAO.query(new SelectSparqlBean(getInsertSparql().getPrefix()
+		List<SparqlEntity> list = sparqlDAO.query(new SelectSparqlBean(insertSparql.getPrefix()
 				+ "select ?name from <http://test> where { ?s a foaf:Person . ?s dcterms:identifier \"1234\"^^xsd:int . ?s foaf:name ?name .}"));
 		
 		for (SparqlEntity sparqlEntity : list) {

@@ -1,10 +1,18 @@
 version: '2'
 services:
-  batch:
-    image: maven:3.3.9-jdk-8
+  maven:
+    #image: maven:3.6.0-jdk-12-alpine
+    image: registry.gitlab.com/aokinobu/docker-maven:0.0.1-SNAPSHOT
     volumes:
-      - ${HOME}/glytoucan/maven:/root/.m2
-      - ${WORKSPACE_PARENT}/${WORKSPACE}:/workspace
-      - /etc/localtime:/etc/localtime
-    working_dir: /workspace/batch
-    command: mvn install
+      - .:/workspace
+      - ./.m2:/root/.m2
+    working_dir: /workspace/
+    environment:
+     - http_proxy
+     - https_proxy
+     - ftp_proxy
+     - PROJECT_VERSION
+     - CI_REGISTRY_IMAGE
+     - CI_JOB_TOKEN
+     - MAVEN_REPO_USER
+     - MAVEN_REPO_PASS

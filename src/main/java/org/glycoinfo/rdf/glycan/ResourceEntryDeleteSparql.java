@@ -91,7 +91,6 @@ public class ResourceEntryDeleteSparql extends DeleteSparqlBean implements Resou
 	    return sdf.format(value);
 	  }
 	
-  @Override
   public String getUri() throws SparqlException {
     String database = null;
     if (StringUtils.isNotBlank(getSparqlEntity().getValue(Database)))

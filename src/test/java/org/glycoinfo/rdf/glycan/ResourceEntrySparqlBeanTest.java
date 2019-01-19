@@ -1,6 +1,7 @@
 package org.glycoinfo.rdf.glycan;
 
 import java.io.UnsupportedEncodingException;
+
 import java.util.Date;
 import java.util.List;
 
@@ -17,14 +18,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = { ResourceEntrySparqlBeanTest.class, VirtSesameTransactionConfig.class })
+@Import({ ResourceEntrySparqlBeanTest.class, VirtSesameTransactionConfig.class })
 @Configuration
 @EnableAutoConfiguration
 public class ResourceEntrySparqlBeanTest {

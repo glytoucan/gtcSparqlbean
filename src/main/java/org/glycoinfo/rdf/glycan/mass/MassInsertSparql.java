@@ -33,7 +33,6 @@ public class MassInsertSparql extends DerivatizedMassInsertSparql implements Ini
 //				+ " CONVERSION\"^^xsd:string .\n";
 //	}
 
-	@Override
 	public void afterPropertiesSet() throws Exception {
 		Assert.state(getGraphBase() != null, "A graphbase is required");
 	}
